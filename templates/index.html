@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainfall Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #e9f5fb;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="file"], input[type="number"] {
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rainfall Prediction</h1>
+    <h2>Upload your data files</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="files[]" multiple required>
+        <button type="submit">Upload</button>
+    </form>
+    <h2>Predict Rainfall</h2>
+    <form action="/predict" method="post">
+        <input type="number" name="year" placeholder="Enter Year" required>
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>
